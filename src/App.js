@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import NavBar from './NavBar';
-import Footer from './Footer';
+import Page from './Page';
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      {/* <Page> */}
-      <Footer/>
+      <h1>Markettaj</h1>
+      <Page/>
     </div>
   );
 }

@@ -11,4 +11,4 @@ export default function Home() {
           "<i>We make informed investing easier.</i>" - <b> Taj Morton</b>
       </div>
     );
-  }
+}

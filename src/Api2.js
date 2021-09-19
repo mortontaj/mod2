@@ -1,6 +1,5 @@
 ﻿import React, { useState, useRef, useEffect } from 'react';
 // import { BrowserRouter as Router, Switch, Link} from 'react-router-dom';
-// import Mainnav from './Mainnav';
 // import { Stock1, Stock2 } from './Stock';
 
 
@@ -14,9 +13,6 @@ export default function Api2() {
 //     StockSymbol: ""
 // })
 
-// State-like property for functional components
-// Creates list to hold stock symbol
-// I want the user to be able to type an input
 const [currency1, setCurrency1] = useState("");
 const [ammount, setAmmount] = useState("");
 const [currency2, setCurrency2] = useState("");
@@ -82,7 +78,7 @@ let ammountRef = useRef();
   };
 })*/
 
-function handleSubmit(e) {
+function handleSubmitExchange(e) {
     e.preventDefault();
 
     const newFiat = {
@@ -99,13 +95,15 @@ fetch(`https://currency-converter5.p.rapidapi.com/currency/convert?format=json&f
 	method: "GET",
 	headers: {
 		"x-rapidapi-host": "currency-converter5.p.rapidapi.com",
-		"x-rapidapi-key": "7a7b957881mshd3ce7c9e713536dp16ee6cjsn45965a7a6da2"
+		"x-rapidapi-key": process.env.REACT_APP_API_KEY
 	}
 })
 .then(response => response.json()
 )
-.then((data) => console.log(data, data.rates))
-            
+.then((data) => {
+  console.log(data)
+})     
+//console.log(rate)
         // setAmmount((newRate * ammount))
         
         
@@ -128,26 +126,11 @@ fetch(`https://currency-converter5.p.rapidapi.com/currency/convert?format=json&f
     
 }
 
-/* 
-const urlLink = `https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-financials?symbol=`;
-const usStock = stock.toLocaleUpperCase();
-  fetch(urlLink + usStock, {
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-      "x-rapidapi-key": "7a7b957881mshd3ce7c9e713536dp16ee6cjsn45965a7a6da2", /// <----- Change to your key
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    
-    })
-*/
+
 return (
    <div>
-      <h1>Currency Exchange</h1>
-       <form onSubmit={handleSubmit}>
+      <h2>Currency Exchange</h2>
+       <form className="exchange" onSubmit={handleSubmitExchange}>
         <label htmlFor="Currency A">Your currency:</label>
         <input id="currency1" ref={currency1Ref} type="text" required />
         
@@ -156,7 +139,7 @@ return (
 
         <label htmlFor="Currency B">Desired currency:</label>
         <input id="currency2" ref={currency2Ref} type="text" required />
-        
+        <br/>
         <button className="button">Exchange Rate</button>
       </form>
        <ol>
@@ -164,7 +147,11 @@ return (
         <ul>{rate}</ul>
         <br/>
         <ul>Exchange amount in {currency2} </ul> 
-        <ul>{ammount}</ul> 
+        <ul>
+            {/* <li>
+              <p>{rate.base_currency_code}</p>
+            </li> */}
+        </ul> 
 
        </ol> 
 
