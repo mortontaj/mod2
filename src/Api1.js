@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const Api1 = () => {
   // State-like property for functional components
@@ -207,7 +207,7 @@ const Api1 = () => {
       </form>
       <div id="stockInfo">
         <p> {renderSecurity(security1)}</p>
-        <p> {renderSecurity(info)}</p>
+        <p id="summary"> {renderSecurity(info)}</p>
         <p> {renderSecurity(security2)}</p>
       </div>
     </div>
@@ -215,16 +215,5 @@ const Api1 = () => {
 };
 
 // {security2.map((item, index) => (<div key={index}><p>{item.sector}</p></div>))}
-
-{
-  /* {security1}
-
-{info} */
-}
-
-{
-  /* <p>{info}</p>
-          <p>{security1}</p> */
-}
 
 export default Api1;

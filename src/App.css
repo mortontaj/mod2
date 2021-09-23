@@ -111,6 +111,15 @@ h2,
   font-size: 19px;
 }
 
+#summary {
+  display: grid;
+  justify-items: center;
+  text-shadow: 2px 0px 5px red;
+  background-color: cornflowerblue;
+  padding: 15px;
+  text-align: justify;
+}
+
 .inputSearch {
   border: solid steelblue 3px;
   border-radius: 8px;
@@ -132,7 +141,13 @@ h2,
   background-color: steelblue;
   border: solid lightsteelblue;
   padding: 25px;
-  border-radius: 15%;
+  border-radius: 4px;
   text-shadow: 2px 0px 1px red;
   background-image: url(https://i.pinimg.com/originals/63/7a/4d/637a4d42e1738853b2f96ffbbd60622a.gif);
+}
+
+#solid {
+  background-color: black;
+  padding: 15px;
+  border-radius: 4px;
 }

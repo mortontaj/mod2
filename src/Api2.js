@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 // import { BrowserRouter as Router, Switch, Link} from 'react-router-dom';
 // import { Stock1, Stock2 } from './Stock';
 

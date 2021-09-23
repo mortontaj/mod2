@@ -1,4 +1,4 @@
-﻿const initialState2 = {
+const initialState2 = {
   marketValue2: 1000,
 };
 

@@ -1,4 +1,4 @@
-﻿const initialState = {
+const initialState = {
   marketValue: 1000,
 };
 
@@ -15,7 +15,7 @@ export default function randomReducer(state = initialState, action) {
           state.marketValue +
           state.marketValue *
             0.0697303 *
-            (-1 * Math.random() ** 0.5238 + Math.random() ** (1 - 0.5238)),
+            (Math.random() ** 0.5138 - Math.random() ** (1 - 0.5138)),
       };
     default:
       return { marketValue: state.marketValue };
