@@ -192,7 +192,7 @@ const Api1 = () => {
   //   console.log(renderSecurity());
   //   console.log(security1);
   return (
-    <div>
+    <div id="margin_place">
       <h2>Stock Search</h2>
       <form id="stockForm" onSubmit={handleSubmitStock}>
         <label htmlFor="stockSearch">Stock symbol</label>
